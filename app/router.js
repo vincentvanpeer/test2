@@ -6,6 +6,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('track', { path: '/:track_id' });
 });
 
 export default Router;
