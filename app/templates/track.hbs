@@ -1,0 +1,17 @@
+<p>{{link-to 'Go Back' 'index' }}</p>
+
+{{#each model.results as |track|}}
+  <p><img src="{{track.artworkUrl100}}"/></p>
+  <h2>{{track.artistName}} - {{track.trackName}}</h2>
+  <p>
+    Preview<br/>
+      <audio controls>
+          <source src="{{track.previewUrl}}">
+          Your browser does not support the audio element.
+      </audio>
+  </p>
+
+{{/each}}
+
+{{outlet}}
+

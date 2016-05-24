@@ -1,0 +1,18 @@
+<p>{{input value=search action="updateResults" on="key-press"}}</p>
+
+{{#if search}}
+  <table border="1">
+    {{#each model.results as |track|}}
+        <tr>
+            <td><img src="{{track.artworkUrl60}}"/></td>
+            <td>{{track.artistName}}</td>
+            <td>{{track.trackName}}</td>
+            <td>{{#link-to "track" track.trackId}}Details{{/link-to}}</td>
+        </tr>
+    {{/each}}
+  </table>
+{{else}}
+    <p>Please type in a filter...</p>
+{{/if}}
+
+{{outlet}}
